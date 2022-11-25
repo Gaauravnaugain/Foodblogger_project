@@ -25,6 +25,11 @@
           <div class="mb-3 mt-4">
             <%= f.text_field :username, class: "form-control", placeholder: "User Name" %>
           </div>
+
+          <div class="mb-3 mt-4">
+          <%= f.label :role %>
+          <%= f.select :role, User.roles.keys %>
+          </div>
           
           <div class="mb-3">
             <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
