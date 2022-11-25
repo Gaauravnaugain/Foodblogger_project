@@ -1,0 +1,48 @@
+<div class="vh-100">
+  <div class="row m-0">
+    <div class="col-md-6 p-5 pe-0 d-flex align-items-center vh-100">
+      <div class="food-banner w-100 d-flex justify-content-end">
+        <%= image_tag 'bg_food.png' %>
+      </div>
+    </div>
+    <div class="col-md-6 p-5 d-flex align-items-center vh-100">
+      <div class="card p-5 w-75 m-auto">
+        <%= image_tag 'logo.png',class: "card-img-top mb-3" %>
+        <%if notice %>
+          <p class="notice alert alert-success"><%= notice %></p>
+        <% elsif alert %>
+          <p class="alert alert alert-danger"><%= alert %></p>
+        <% end %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="mb-3">
+            <%= f.label :email, class: "form-label" %>
+            <%= f.email_field :email, class: "form-control form-control-lg", placeholder: "Username, Email or Number" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password, class: "form-label" %>
+            <%= f.password_field :password, class: "form-control form-control-lg", placeholder: "************" %>
+          </div>
+          <%= f.submit "Log in", class: "btn btn-lg btn-primary w-100"%>
+        <% end %>
+        <div class="d-flex align-items-center mt-4">
+          <div class="line"></div>
+          <h2 class="line-text">OR</h2>
+          <div class="line"></div>
+        </div>
+        <div class="mt-3 text-center fw-bold">
+          <%= link_to "javascript:void(0)", class: "d-inline-flex align-items-center justify-content-center text-decoration-none text-primary" do %>
+            <%= image_tag "facebook.png", alt: "img", width: "22px", class: "d-inline-block me-2" %>
+            Log in with Facebook
+          <% end %>
+        </div>
+        <div class="my-3 text-center fw-bold">
+          <%= link_to "Forgot password?", "javascript:void(0)", class: "text-decoration-none text-primary" %>
+        </div>
+        <div class="my-3 text-center">
+          Don't have an account?
+          <%= link_to "Sign Up", new_user_registration_path , class:"fw-bold ms-1 text-decoration-none text-primary"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
