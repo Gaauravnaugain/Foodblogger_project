@@ -6,4 +6,6 @@ class User < ApplicationRecord
   enum role: { user: 0, shop: 1, admin: 2 }
   has_many :posts
   has_one_attached :profile_pic
+  has_many :likes
+  has_many :comments
 end

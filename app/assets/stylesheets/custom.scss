@@ -56,3 +56,11 @@ body{
 .object-fit-cover {
   object-fit: cover;
 }
+
+.color-red{
+  color: redT;
+}
+
+.fa-heart::before {
+    content: "\f004";
+}
