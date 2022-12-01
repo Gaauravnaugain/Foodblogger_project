@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-between">
+  <div class="d-flex">
+    <%= image_tag 'default.jpg', class: "img-thumbail rounded-circle", style: "width: 2.5rem; max-height:2.5rem" %>
+    <div class="d-flex flex-column mx-3 justify-content-center">
+      <small class="fw-bold" style="overflow: hidden;text-overflow: ellipsis; white-space: nowrap; max-width:10rem"><%= comment.user.username %>
+      <small> <%= comment.body %> </small>
+      <small class="text-muted" > <%= time_ago_in_words(comment.created_at) %> </small>
+    </div>
+  </div>
+  <%= button_to comment_path(id: comment_id), method: :delete %>
+  <i class="fa fa-times"> </i>
+</div>  
